@@ -1,16 +1,16 @@
 # TinyVFS
 
-`TinyVFS` ÊÇÒ»¸öÐéÄâÎÄ¼þÏµÍ³£¬ÊÜABP vNext¿ò¼ÜµÄÆô·¢¡£Ëü¿ÉÒÔ½«js¡¢css¡¢image¡¢cshtmlµÈÎÄ¼þÇ¶Èëµ½³ÌÐò¼¯ÖÐ£¬
-²¢ÔÚÔËÐÐÊ±¿ÉÒÔ½«ËüÃÇÏñÎïÀíÎÄ¼þÒ»ÑùÈ¥Ê¹ÓÃ¡£
+`TinyVFS` æ˜¯ä¸€ä¸ªè™šæ‹Ÿæ–‡ä»¶ç³»ç»Ÿï¼Œå—ABP vNextæ¡†æž¶çš„å¯å‘ã€‚å®ƒå¯ä»¥å°†jsã€cssã€imageã€cshtmlç­‰æ–‡ä»¶åµŒå…¥åˆ°ç¨‹åºé›†ä¸­ï¼Œ
+å¹¶åœ¨è¿è¡Œæ—¶å¯ä»¥å°†å®ƒä»¬åƒç‰©ç†æ–‡ä»¶ä¸€æ ·åŽ»ä½¿ç”¨ã€‚
 
-## ¿ìËÙÈëÃÅ
-
-
-## ´úÂë¹±Ï×
-
-Èç¹ûÄúÓÐÏë·¨¿ÉÒÔ¼ÓÈë½øÀ´£¬»òÕß·¢ÏÖ±¾ÏîÄ¿ÖÐÓÐÐèÒª¸Ä½øµÄ´úÂë£¬»¶Ó­Fork²¢Ìá½»PR£¡
+## å¿«é€Ÿå…¥é—¨
 
 
-## ²Î¿¼
+## ä»£ç è´¡çŒ®
+
+å¦‚æžœæ‚¨æœ‰æƒ³æ³•å¯ä»¥åŠ å…¥è¿›æ¥ï¼Œæˆ–è€…å‘çŽ°æœ¬é¡¹ç›®ä¸­æœ‰éœ€è¦æ”¹è¿›çš„ä»£ç ï¼Œæ¬¢è¿ŽForkå¹¶æäº¤PRï¼
+
+
+## å‚è€ƒ
 
 - [ABP vNext](https://github.com/abpframework/abp)
