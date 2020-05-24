@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.FileProviders;
+using System;
 using System.IO;
 using System.Reflection;
-using System.Text;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Primitives;
 
 namespace TinyVFS.Embedded
 {
     /// <summary>
     /// Represents a file embedded in an assembly.
     /// </summary>
-    public class EmbeddedResourceFileInfo : IFileProvider
+    public class EmbeddedResourceFileInfo : IFileInfo
     {
 
         public bool Exists => true;
@@ -48,21 +45,6 @@ namespace TinyVFS.Embedded
         public string Name { get; }
         private readonly string _resourcePath;
 
-        public IFileInfo GetFileInfo(string subpath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDirectoryContents GetDirectoryContents(string subpath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IChangeToken Watch(string filter)
-        {
-            throw new NotImplementedException();
-        }
-
         private readonly Assembly _assembly;
 
         public EmbeddedResourceFileInfo(
@@ -82,7 +64,19 @@ namespace TinyVFS.Embedded
 
         public Stream CreateReadStream()
         {
-            throw  new NotImplementedException();
+            var stream = _assembly.GetManifestResourceStream(_resourcePath);
+
+            if (!_length.HasValue && stream != null)
+            {
+                _length = stream.Length;
+            }
+
+            return stream;
+        }
+
+        public override string ToString()
+        {
+            return $"[EmbeddedResourceFileInfo] {Name} ({this.VirtualPath})";
         }
     }
 }

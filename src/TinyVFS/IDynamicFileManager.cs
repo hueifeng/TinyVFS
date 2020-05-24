@@ -9,7 +9,7 @@ namespace TinyVFS
         ///     Add Or Update File
         /// </summary>
         /// <param name="fileInfo"></param>
-        void AddOrUpdate(IFileProvider fileInfo);
+        void AddOrUpdate(IFileInfo fileInfo);
 
         /// <summary>
         ///     Delete File

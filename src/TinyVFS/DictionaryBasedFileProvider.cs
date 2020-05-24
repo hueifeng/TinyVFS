@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.Extensions.FileProviders;
+﻿using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
 
 namespace TinyVFS
 {
@@ -19,13 +16,26 @@ namespace TinyVFS
                 return NotFoundDirectoryContents.Singleton;
             }
 
-            var fileList=new List<IFileInfo>();
+            var fileList = new List<IFileInfo>();
 
             var directoryPath = subpath.EnsureEndsWith('/');
             foreach (var fileInfo in Files.Values)
             {
-                var fullPath=fileInfo.
+                var fullPath = fileInfo.GetVirtualOrPhysicalPathOrNull();
+                if (!fullPath.StartsWith(directoryPath))
+                {
+                    continue;
+                }
+
+                var relativePath = fullPath.Substring(directoryPath.Length);
+                if (relativePath.Contains("/"))
+                {
+                    continue;
+                }
+
+                fileList.Add(fileInfo);
             }
+            return new EnumerableDirectoryContents(fileList);
 
         }
 

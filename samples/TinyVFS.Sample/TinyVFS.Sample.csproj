@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TinyVFS\TinyVFS.csproj" />
+    <ProjectReference Include="..\WebResources\WebResources.csproj" />
+  </ItemGroup>
+  
+</Project>
