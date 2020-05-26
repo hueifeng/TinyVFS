@@ -6,8 +6,9 @@
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>HueiFeng</Authors>
   </PropertyGroup>
 
   <ItemGroup>
