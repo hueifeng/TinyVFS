@@ -80,9 +80,19 @@ public class MyService
 
 虚拟文件中间件用于向客户端/浏览器提供嵌入式(js, css, image ...)文件, 
 就像 wwwroot 文件夹中的物理(静态)文件一样. 在静态文件中间件之后添加它, 如下所示:
+
 ```csharp
 app.UseVirtualFiles();
 ```
+
+如果想扩展其他文件格式那么，可使用重载方法，如下所示:
+
+```csharp
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".less"] = "text/css";
+app.UseVirtualFiles(provider);
+```
+
 
 通过设置虚拟文件中间件，使在虚拟文件相同的位置放置物理文件，从而使物理文件覆盖虚拟文件成为可能。
 

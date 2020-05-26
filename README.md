@@ -88,6 +88,14 @@ Just like the physical (static) file in the wwwroot folder. Add it after the sta
 app.UseVirtualFiles();
 ```
 
+If you want to extend other file formats, you can use the overloaded method, as shown below:
+
+```csharp
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".less"] = "text/css";
+app.UseVirtualFiles(provider);
+```
+
 
 By setting the virtual file middleware, it is possible to place the physical file in the same position of the virtual file, thereby making it possible for the physical file to cover the virtual file.
 

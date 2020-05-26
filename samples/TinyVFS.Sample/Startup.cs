@@ -54,6 +54,11 @@ namespace TEST
 
             app.UseVirtualFiles();
 
+            //Add File Extension 
+            //var provider = new FileExtensionContentTypeProvider();
+            //provider.Mappings[".less"] = "text/css";
+            //app.UseVirtualFiles(provider);
+
             app.UseRouting();
 
             app.UseAuthorization();
