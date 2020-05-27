@@ -5,6 +5,12 @@ Language: English | [中文](README.zh-cn.md)
 `TinyVFS` is a virtual file system, inspired by the ABP vNext framework. It can embed js, css, image, cshtml and other files into the assembly,
 And they can be used like physical files at runtime.
 
+#### Features
+
+* In a single application, it can divide the front end and back end (management system) into separate project projects.
+* In development it allows developers to develop different businesses or modules at the same time.
+* It allows us to split the system function modules and assemble them together.
+
 ## Quick Start
 
 1、Install Package
