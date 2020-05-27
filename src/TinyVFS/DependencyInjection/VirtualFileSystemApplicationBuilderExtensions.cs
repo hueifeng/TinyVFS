@@ -36,7 +36,7 @@ namespace Microsoft.AspNetCore.Builder
         /// Adds a middleware that provides virtual files system.
         /// </summary>
         /// <param name="app">The <see cref="IApplicationBuilder"/>.</param>
-        /// <param name = "options" > A < see cref="StaticFileOptions"/> used to configure the middleware.</param>
+        /// <param name = "options" > A <see cref="StaticFileOptions"/> used to configure the middleware.</param>
         /// <returns>A reference to the <paramref name="app"/> after the operation has completed.</returns>
         public static void UseVirtualFiles(this IApplicationBuilder app, StaticFileOptions options)
         {
@@ -57,7 +57,7 @@ namespace Microsoft.AspNetCore.Builder
         /// Adds a middleware that provides virtual files system.
         /// </summary>
         /// <param name="app">The <see cref="IApplicationBuilder"/>.</param>
-        /// <param name = "contentTypeProvider" > A < see cref="IContentTypeProvider"/> used to configure the middleware.</param>
+        /// <param name = "contentTypeProvider" > A <see cref="IContentTypeProvider"/> used to configure the middleware.</param>
         /// <returns>A reference to the <paramref name="app"/> after the operation has completed.</returns>
         public static void UseVirtualFiles(this IApplicationBuilder app, IContentTypeProvider contentTypeProvider)
         {
