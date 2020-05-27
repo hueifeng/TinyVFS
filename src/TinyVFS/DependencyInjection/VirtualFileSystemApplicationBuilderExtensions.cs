@@ -75,7 +75,8 @@ namespace Microsoft.AspNetCore.Builder
             app.UseStaticFiles(
                 new StaticFileOptions
                 {
-                    ContentTypeProvider = contentTypeProvider
+                    ContentTypeProvider = contentTypeProvider,
+                    FileProvider = app.ApplicationServices.GetRequiredService<IWebContentFileProvider>()
                 }
             );
         }
