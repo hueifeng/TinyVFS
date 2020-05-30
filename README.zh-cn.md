@@ -1,5 +1,7 @@
 # TinyVFS
 
+[![nuget](https://img.shields.io/nuget/v/TinyVFS.svg?style=flat-square)](https://www.nuget.org/packages/TinyVFS) [![stats](https://img.shields.io/nuget/dt/TinyVFS.svg?style=flat-square)](https://www.nuget.org/stats/packages/TinyVFS?groupby=Version) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/hueifeng/TinyVFS/master/LICENSE)
+
 `TinyVFS` 是一个虚拟文件系统，受ABP vNext框架的启发。它可以将js、css、image、cshtml等文件嵌入到程序集中，
 并在运行时可以将它们像物理文件一样去使用。
 
