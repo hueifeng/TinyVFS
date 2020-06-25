@@ -133,3 +133,7 @@ If you have any ideas you can join in, or find that there is code in this projec
 ## Reference
 
 - [ABP vNext](https://github.com/abpframework/abp)
+
+## License
+
+Apache
