@@ -127,3 +127,7 @@ app.UseVirtualFiles(provider);
 ## 参考
 
 - [ABP vNext](https://github.com/abpframework/abp)
+
+## License
+
+Apache
