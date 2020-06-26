@@ -129,11 +129,10 @@ They do not require any configuration and can be used in our applications. When 
 
 If you have any ideas you can join in, or find that there is code in this project that needs improvement, welcome to Fork and submit a PR!
 
+## License
+
+[Apache](https://raw.githubusercontent.com/hueifeng/TinyVFS/master/LICENSE)
 
 ## Reference
 
 - [ABP vNext](https://github.com/abpframework/abp)
-
-## License
-
-Apache
