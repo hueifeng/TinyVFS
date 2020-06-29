@@ -37,11 +37,11 @@ Edit web resource project `.csproj`
 Embed the file into the virtual file system with the following code snippet.
 
 ```csharp
-     services.AddVirtualFilesService();
-            services.Configure<VirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.AddEmbedded<WebApplication1.Pages.IndexModel>("WebResources");
-            });
+services.AddVirtualFilesService();
+     services.Configure<VirtualFileSystemOptions>(options =>
+     {
+          options.FileSets.AddEmbedded<WebApplication1.Pages.IndexModel>("WebResources");
+     });
 ```
 
 
@@ -79,13 +79,13 @@ When we are developing on the local machine, maybe we will modify the static fil
 Now we can use `ReplaceEmbeddedByPhysical` to refresh through the browser to get the latest file information
 
 ```csharp
-  services.AddVirtualFilesService();
-            services.Configure<VirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.ReplaceEmbeddedByPhysical<WebApplication1.Pages.IndexModel>(
-                 Path.Combine(WebHostEnvironment.ContentRootPath, "..\\WebResources")
-             );
-            });
+services.AddVirtualFilesService();
+          services.Configure<VirtualFileSystemOptions>(options =>
+          {
+              options.FileSets.ReplaceEmbeddedByPhysical<WebApplication1.Pages.IndexModel>(
+               Path.Combine(WebHostEnvironment.ContentRootPath, "..\\WebResources")
+           );
+          });
 
 ```
 

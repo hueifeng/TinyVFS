@@ -34,11 +34,11 @@ Install-Package TinyVFS
 通过如下代码片段将文件嵌入到虚拟文件系统。
 
 ```csharp
-     services.AddVirtualFilesService();
-            services.Configure<VirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.AddEmbedded<WebApplication1.Pages.IndexModel>("WebResources");
-            });
+services.AddVirtualFilesService();
+     services.Configure<VirtualFileSystemOptions>(options =>
+     {
+          options.FileSets.AddEmbedded<WebApplication1.Pages.IndexModel>("WebResources");
+     });
 ```
 
 
@@ -76,13 +76,14 @@ public class MyService
 现在我们可以通过`ReplaceEmbeddedByPhysical `来通过浏览器刷新即可获取最新的文件信息
 
 ```csharp
-  services.AddVirtualFilesService();
-            services.Configure<VirtualFileSystemOptions>(options =>
-            {
-                options.FileSets.ReplaceEmbeddedByPhysical<WebApplication1.Pages.IndexModel>(
-                 Path.Combine(WebHostEnvironment.ContentRootPath, "..\\WebResources")
-             );
-            });
+services.AddVirtualFilesService();
+          services.Configure<VirtualFileSystemOptions>(options =>
+          {
+              options.FileSets.ReplaceEmbeddedByPhysical<WebApplication1.Pages.IndexModel>(
+               Path.Combine(WebHostEnvironment.ContentRootPath, "..\\WebResources")
+           );
+          });
+
 
 ```
 
