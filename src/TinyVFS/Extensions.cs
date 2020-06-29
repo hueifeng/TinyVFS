@@ -13,13 +13,6 @@ namespace TinyVFS
     public static class Extensions
     {
 
-        public static T GetSingletonInstanceOrNull<T>(this IServiceCollection services)
-        {
-            return (T)services
-                .FirstOrDefault(d => d.ServiceType == typeof(T))
-                ?.ImplementationInstance;
-        }
-
         /// <summary>
         /// Gets a value from the dictionary with given key. Returns default value if can not find.
         /// </summary>
