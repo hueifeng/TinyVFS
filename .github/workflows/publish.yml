@@ -17,3 +17,4 @@ jobs:
               # Filepath of the project to be packaged, relative to root of repository
               PROJECT_FILE_PATH: src/TinyVFS/TinyVFS.csproj
               NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+              dotnet-version: '5.0.100'
