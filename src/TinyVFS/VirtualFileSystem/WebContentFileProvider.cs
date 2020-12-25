@@ -26,7 +26,7 @@ namespace TinyVFS.VirtualFileSystem
             Options = options.Value;
 
             _fileProvider = CreateFileProvider();
-       }
+        }
 
         public virtual IFileInfo GetFileInfo(string subpath)
         {

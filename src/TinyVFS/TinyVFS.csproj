@@ -6,7 +6,7 @@
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>HueiFeng</Authors>
     <PackageLicenseExpression></PackageLicenseExpression>
@@ -16,17 +16,17 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="5.0.*" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="5.0.*" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="5.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.*" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.1.10" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="3.1.10" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.1.10" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.10" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.1.*" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="3.1.*" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.1.*" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.*" />
   </ItemGroup>
   
   <ItemGroup>

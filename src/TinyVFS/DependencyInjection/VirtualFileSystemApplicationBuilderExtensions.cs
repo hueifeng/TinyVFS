@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.AspNetCore.StaticFiles;
+﻿using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
+using System;
 using TinyVFS.VirtualFileSystem;
 
 namespace Microsoft.AspNetCore.Builder
