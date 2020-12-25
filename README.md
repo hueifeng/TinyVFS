@@ -20,14 +20,14 @@ And they can be used like physical files at runtime.
 
 1、Install Package
 
-```
+```powershell
 Install-Package TinyVFS
 ```
 
 2、Registering Embedded Files
 
 Edit web resource project `.csproj`
-```
+```csharp
 <ItemGroup>
   <EmbeddedResource Include="MyResources\**\*.*" />
   <Content Remove="MyResources\**\*.*" />
