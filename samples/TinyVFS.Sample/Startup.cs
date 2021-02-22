@@ -26,14 +26,14 @@ namespace TEST
             services.AddVirtualFilesService();
             services.Configure<VirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<WebApplication1.Pages.IndexModel>("WebResources");
-                if (WebHostEnvironment.IsDevelopment())
-                {
-                    options.FileSets.ReplaceEmbeddedByPhysical<WebApplication1.Pages.IndexModel>(Path.Combine(WebHostEnvironment.ContentRootPath, "..", "WebResources"));
-                }
+                options.FileSets.AddEmbedded<WebResources.Pages.IndexModel>("WebResources");
+                //if (WebHostEnvironment.IsDevelopment())
+                //{
+                //    options.FileSets.ReplaceEmbeddedByPhysical<WebResources.Pages.IndexModel>(Path.Combine(WebHostEnvironment.ContentRootPath, "..", "WebResources"));
+                //}
             });
 
-            services.AddMvc().AddRazorRuntimeCompilation();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+    <!--<PreserveCompilationReferences>true</PreserveCompilationReferences>-->
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\TinyVFS\TinyVFS.csproj" />
-    <ProjectReference Include="..\WebResources\WebResources.csproj" />
+    <ProjectReference Include="..\WebResources\WebResources\WebResources.csproj" />
   </ItemGroup>
   
 </Project>
