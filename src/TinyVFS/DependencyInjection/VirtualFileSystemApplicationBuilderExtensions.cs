@@ -10,46 +10,26 @@ namespace Microsoft.AspNetCore.Builder
     /// </summary>
     public static class VirtualFileSystemApplicationBuilderExtensions
     {
-
         /// <summary>
         /// Adds a middleware that provides virtual files system.
         /// </summary>
         /// <param name="app">The <see cref="IApplicationBuilder"/>.</param>
+        /// <param name = "configure" > A <see cref="StaticFileOptions"/> used to configure the middleware.</param>
         /// <returns>A reference to the <paramref name="app"/> after the operation has completed.</returns>
-        public static void UseVirtualFiles(this IApplicationBuilder app)
+        public static IApplicationBuilder UseVirtualFiles(this IApplicationBuilder app, Action<StaticFileOptions> configure = null)
         {
             if (app == null)
             {
                 throw new ArgumentNullException(nameof(app));
             }
 
-            app.UseStaticFiles(
-                new StaticFileOptions
-                {
-                    FileProvider = app.ApplicationServices.GetRequiredService<IWebContentFileProvider>()
-                }
-            );
-        }
-
-        /// <summary>
-        /// Adds a middleware that provides virtual files system.
-        /// </summary>
-        /// <param name="app">The <see cref="IApplicationBuilder"/>.</param>
-        /// <param name = "options" > A <see cref="StaticFileOptions"/> used to configure the middleware.</param>
-        /// <returns>A reference to the <paramref name="app"/> after the operation has completed.</returns>
-        public static void UseVirtualFiles(this IApplicationBuilder app, StaticFileOptions options)
-        {
-            if (app == null)
+            var staticFileOptions = new StaticFileOptions
             {
-                throw new ArgumentNullException(nameof(app));
-            }
+                FileProvider = app.ApplicationServices.GetRequiredService<IWebContentFileProvider>()
+            };
+            configure?.Invoke(staticFileOptions);
 
-            if (options == null)
-            {
-                throw new ArgumentNullException(nameof(options));
-            }
-
-            app.UseStaticFiles(options);
+            return app.UseStaticFiles(staticFileOptions);
         }
 
         /// <summary>
@@ -69,7 +49,6 @@ namespace Microsoft.AspNetCore.Builder
             {
                 throw new ArgumentNullException(nameof(contentTypeProvider));
             }
-
 
             app.UseStaticFiles(
                 new StaticFileOptions

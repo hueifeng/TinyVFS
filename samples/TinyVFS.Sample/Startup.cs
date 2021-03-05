@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.IO;
-using TinyVFS;
 
-namespace TEST
+namespace TinyVFS.Sample
 {
     public class Startup
     {
@@ -52,7 +51,14 @@ namespace TEST
 
             app.UseHttpsRedirection();
 
-            app.UseVirtualFiles();
+            var provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".less"] = "text/css";
+            //More...
+
+            app.UseVirtualFiles(option =>
+            {
+                option.ContentTypeProvider = provider;
+            });
 
             //Add File Extension 
             //var provider = new FileExtensionContentTypeProvider();
