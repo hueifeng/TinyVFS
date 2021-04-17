@@ -3,6 +3,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TinyVFS.VirtualFileSystem
@@ -86,11 +87,17 @@ namespace TinyVFS.VirtualFileSystem
 
         protected virtual IFileProvider CreateFileProvider()
         {
-            return new CompositeFileProvider(
+            var fileProviders = new List<IFileProvider>
+            {
                 new PhysicalFileProvider(_hostingEnvironment.ContentRootPath),
                 _virtualFileProvider
+            };
+
+            return new CompositeFileProvider(
+                fileProviders
             );
         }
+
 
         protected virtual bool ExtraAllowedFolder(string path)
         {

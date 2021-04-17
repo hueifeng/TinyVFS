@@ -27,6 +27,11 @@ namespace TinyVFS
 
         public virtual IDirectoryContents GetDirectoryContents(string subpath)
         {
+            if (subpath == "")
+            {
+                subpath = "/";
+            }
+
             return _hybridFileProvider.GetDirectoryContents(subpath);
         }
 
@@ -41,52 +46,12 @@ namespace TinyVFS
 
             fileProviders.Add(dynamicFileProvider);
 
-            if (_options.FileSets.PhysicalPaths.Any())
+            foreach (var fileSet in _options.FileSets.AsEnumerable().Reverse())
             {
-                fileProviders.AddRange(
-                    _options.FileSets.PhysicalPaths
-                        .Select(rootPath => new PhysicalFileProvider(rootPath))
-                        .Reverse()
-                );
+                fileProviders.Add(fileSet.FileProvider);
             }
-
-            fileProviders.Add(new InternalVirtualFileProvider(_options));
 
             return new CompositeFileProvider(fileProviders);
-        }
-
-        protected class InternalVirtualFileProvider : DictionaryBasedFileProvider
-        {
-            protected override IDictionary<string, IFileInfo> Files => _files.Value;
-
-            private readonly VirtualFileSystemOptions _options;
-            private readonly Lazy<Dictionary<string, IFileInfo>> _files;
-
-            public InternalVirtualFileProvider(VirtualFileSystemOptions options)
-            {
-                _options = options;
-                _files = new Lazy<Dictionary<string, IFileInfo>>(
-                    CreateFiles,
-                    true
-                );
-            }
-
-            private Dictionary<string, IFileInfo> CreateFiles()
-            {
-                var files = new Dictionary<string, IFileInfo>(StringComparer.OrdinalIgnoreCase);
-
-                foreach (var set in _options.FileSets)
-                {
-                    set.AddFiles(files);
-                }
-
-                return files;
-            }
-
-            protected override string NormalizePath(string subpath)
-            {
-                return VirtualFilePathHelper.NormalizePath(subpath);
-            }
         }
     }
 }

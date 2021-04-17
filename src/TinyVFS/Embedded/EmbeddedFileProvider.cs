@@ -7,31 +7,26 @@ using System.Reflection;
 
 namespace TinyVFS.Embedded
 {
-    public class EmbeddedFileSet : DictionaryBasedFileProvider
+    public class EmbeddedFileProvider : DictionaryBasedFileProvider
     {
         public Assembly Assembly { get; }
 
         public string BaseNamespace { get; }
 
-        public string BaseFolderInProject { get; }
-
         protected override IDictionary<string, IFileInfo> Files => _files.Value;
-
         private readonly Lazy<Dictionary<string, IFileInfo>> _files;
 
-        public EmbeddedFileSet(
-            Assembly assembly,
-            string baseNamespace = null,
-            string baseFolderInProject = null)
+        public EmbeddedFileProvider(
+             Assembly assembly,
+             string baseNamespace = null)
         {
             Assembly = assembly;
             BaseNamespace = baseNamespace;
-            BaseFolderInProject = baseFolderInProject;
 
             _files = new Lazy<Dictionary<string, IFileInfo>>(
-            CreateFiles,
-            true
-        );
+                CreateFiles,
+                true
+            );
         }
 
         public void AddFiles(Dictionary<string, IFileInfo> files)
@@ -106,7 +101,7 @@ namespace TinyVFS.Embedded
         {
             if (!BaseNamespace.IsNullOrEmpty())
             {
-                resourceName = resourceName.Substring(startIndex: BaseNamespace.Length + 1);
+                resourceName = resourceName.Substring(BaseNamespace.Length + 1);
             }
 
             var pathParts = resourceName.Split('.');
@@ -116,7 +111,7 @@ namespace TinyVFS.Embedded
             }
 
             var folder = pathParts.Take(pathParts.Length - 2).JoinAsString("/");
-            var fileName = pathParts[^2] + "." + pathParts[^1];
+            var fileName = pathParts[pathParts.Length - 2] + "." + pathParts[pathParts.Length - 1];
 
             return folder + "/" + fileName;
         }
@@ -128,9 +123,13 @@ namespace TinyVFS.Embedded
                 return filePath;
             }
 
-            return filePath.Substring(startIndex: filePath.LastIndexOf("/", StringComparison.Ordinal) + 1);
+            return filePath.Substring(filePath.LastIndexOf("/", StringComparison.Ordinal) + 1);
         }
 
+        protected override string NormalizePath(string subpath)
+        {
+            return VirtualFilePathHelper.NormalizePath(subpath);
+        }
 
         private Dictionary<string, IFileInfo> CreateFiles()
         {

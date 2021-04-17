@@ -2,7 +2,7 @@
 
 namespace TinyVFS
 {
-    public class VirtualFileSetList:List<IVirtualFileSet>
+    public class VirtualFileSetList:List<VirtualFileSetInfo>
     {
         public List<string> PhysicalPaths { get; }
 
