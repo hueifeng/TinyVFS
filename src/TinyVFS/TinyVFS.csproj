@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
     <Description>The virtual file system embeds (js, css, html, cshtml) and other files into the dll, so that it can be used like a physical file during operation</Description>
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
@@ -14,20 +14,6 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageIcon>TinyVFS.png</PackageIcon>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="5.0.*" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.*" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.1.*" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Composite" Version="3.1.*" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.1.*" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="3.1.*" />
-  </ItemGroup>
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
