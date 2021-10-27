@@ -1,3 +1,4 @@
+
 name: .NET Core
 
 on:
@@ -9,19 +10,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dotnet: [ '3.1.x', '5.0.x', '6.0.x' ]
-    name:  🔨 Use ${{ matrix.dotnet }} SDK
     steps:
-        - uses: actions/checkout@v2
-        - name: Setup dotnet
-          uses: actions/setup-dotnet@v1
-          with:
-            dotnet-version: ${{ matrix.dotnet }}
-        - name: Install dependencies
-          run: dotnet restore
-        - name: Build
-          run: dotnet build --configuration Release --no-restore
-        - name: Test
-          run: dotnet test --no-restore --verbosity normal
+      - uses: actions/checkout@v2
+      - name: 🔨 Use .NET Core 3.1.X SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.x'
+        
+      - name: 🔨 Use .NET 5.0.X SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x'
+      - name: 🔨 Use .NET 6.0.X SDK
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
