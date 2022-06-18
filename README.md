@@ -1,6 +1,7 @@
 # TinyVFS 
 
-[![nuget](https://img.shields.io/nuget/v/TinyVFS.svg?style=flat-square)](https://www.nuget.org/packages/TinyVFS) 
+[![nuget](https://img.shields.io/nuget/v/TinyVFS.svg?style=flat-square)](https://www.nuget.org/packages/TinyVFS) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhueifeng%2FTinyVFS.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhueifeng%2FTinyVFS?ref=badge_shield)
+
 ![.NET Core](https://github.com/hueifeng/TinyVFS/workflows/.NET%20Core/badge.svg)
 [![stats](https://img.shields.io/nuget/dt/TinyVFS.svg?style=flat-square)](https://www.nuget.org/stats/packages/TinyVFS?groupby=Version) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/hueifeng/TinyVFS/master/LICENSE)
 
@@ -132,6 +133,9 @@ If you have any ideas you can join in, or find that there is code in this projec
 ## License
 
 [Apache](https://raw.githubusercontent.com/hueifeng/TinyVFS/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fhueifeng%2FTinyVFS.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fhueifeng%2FTinyVFS?ref=badge_large)
 
 ## Reference
 
