@@ -4,7 +4,6 @@
 ![.NET Core](https://github.com/hueifeng/TinyVFS/workflows/.NET%20Core/badge.svg)
 [![stats](https://img.shields.io/nuget/dt/TinyVFS.svg?style=flat-square)](https://www.nuget.org/stats/packages/TinyVFS?groupby=Version) [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/hueifeng/TinyVFS/master/LICENSE)
 
-
 Language: English | [中文](README.zh-cn.md)
 
 `TinyVFS` is a virtual file system, inspired by the ABP vNext framework. It can embed js, css, image, cshtml and other files into the assembly,
@@ -124,6 +123,12 @@ Virtual files can be integrated directly into ASP.NET Core
 
 
 They do not require any configuration and can be used in our applications. When these files exist in our physical directory, they overwrite the virtual files.
+
+## Next Steps
+
+Click the button below to start a new development environment:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/hueifeng/TinyVFS)
 
 ## Contribution
 
