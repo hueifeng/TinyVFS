@@ -25,13 +25,11 @@ namespace TinyVFS.VirtualFileSystem
             _virtualFileProvider = virtualFileProvider;
             _hostingEnvironment = hostingEnvironment;
             Options = options.Value;
-
             _fileProvider = CreateFileProvider();
         }
 
         public virtual IFileInfo GetFileInfo(string subpath)
         {
-
             if (PathUtils.PathNavigatesAboveRoot(subpath))
             {
                 return new NotFoundFileInfo(subpath);

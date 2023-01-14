@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net7.0;net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
     <Description>The virtual file system embeds (js, css, html, cshtml) and other files into the dll, so that it can be used like a physical file during operation</Description>
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>2.1.4</Version>
+    <Version>2.1.5</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>HueiFeng</Authors>
     <PackageLicenseExpression></PackageLicenseExpression>
