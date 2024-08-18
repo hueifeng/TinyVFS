@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net7.0;net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net8.0;net7.0;net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
     <Description>The virtual file system embeds (js, css, html, cshtml) and other files into the dll, so that it can be used like a physical file during operation</Description>
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
