@@ -6,6 +6,7 @@
     <PackageProjectUrl>https://github.com/hueifeng/TinyVFS</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hueifeng/TinyVFS</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
     <Version>2.1.6</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>HueiFeng</Authors>
