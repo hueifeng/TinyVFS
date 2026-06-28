@@ -125,9 +125,15 @@ Virtual files can be integrated directly into ASP.NET Core
 They do not require any configuration and can be used in our applications. When these files exist in our physical directory, they overwrite the virtual files.
 
 ## Next Steps
+Click any of the buttons below to start a new development environment to demo or contribute to the codebase without having to install anything on your machine:
 
-Click the button below to start a new development environment:
-
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/hueifeng/TinyVFS)
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/hueifeng/TinyVFS)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/hueifeng/TinyVFS)
+[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/hueifeng/TinyVFS)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/hueifeng/TinyVFS)
+[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/hueifeng/TinyVFS)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/hueifeng/TinyVFS)
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/hueifeng/TinyVFS)
 
 ## Contribution
